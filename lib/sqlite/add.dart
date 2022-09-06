@@ -1,3 +1,4 @@
+
 import 'package:all_persistences_types/sqlite/models/person.dart';
 import 'package:flutter/material.dart';
 
@@ -64,10 +65,9 @@ class AddPerson extends StatelessWidget {
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
                               Person person = Person(
-                                firstName: _nameController.text,
-                                lastName:_lastNameController.text,
-                                address: _addressController.text                                
-                              );
+                                  firstName: _nameController.text, 
+                                  lastName: _lastNameController.text, 
+                                  address: _addressController.text);
                               Navigator.pop(context, person);
                             }
                           },
@@ -77,4 +77,3 @@ class AddPerson extends StatelessWidget {
     );
   }
 }
-
