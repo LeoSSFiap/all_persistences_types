@@ -1,7 +1,5 @@
 import 'package:all_persistences_types/utils/customWidgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class HomeWidget extends StatelessWidget {
   const HomeWidget({Key? key}) : super(key: key);
@@ -12,8 +10,8 @@ class HomeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: title,        
-        ), 
+        title: title,
+      ),
       body: ListView(
         children: [
           ListTile(
@@ -21,8 +19,28 @@ class HomeWidget extends StatelessWidget {
             title: const Text("SQLite"),
             subtitle: const Text("Lista de Pessoas"),
             trailing: const Icon(Icons.navigate_next),
-            onTap: (){
+            onTap: () {
               Navigator.pushNamed(context, "/sqlite");
+            },
+          ),
+          divisorListMain(),
+          ListTile(
+            leading: buildSvgIcon("images/db.svg"),
+            title: const Text("Floor"),
+            subtitle: const Text("Lista de Livros"),
+            trailing: const Icon(Icons.navigate_next),
+            onTap: () {
+              Navigator.pushNamed(context, "/floor");
+            },
+          ),
+          divisorListMain(),
+          ListTile(
+            leading: buildSvgIcon("images/firebase.svg"),
+            title: const Text("Firebase Cloud Firestore"),
+            subtitle: const Text("Lista de Carros"),
+            trailing: const Icon(Icons.navigate_next),
+            onTap: () {
+              Navigator.pushNamed(context, "/firebase");
             },
           ),
           divisorListMain()
